@@ -1,0 +1,4 @@
+[submodule "sparkle/sparkle_source"]
+	path = sparkle/sparkle_source
+	url = https://github.com/sparkle-project/Sparkle.git
+	branch = 2.x
