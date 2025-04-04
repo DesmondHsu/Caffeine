@@ -10,8 +10,6 @@
 		F21DAB042C3040F70044ACF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21DAB032C3040F70044ACF2 /* Assets.xcassets */; };
 		F21DAB112C30422A0044ACF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21DAB0F2C30422A0044ACF2 /* AppDelegate.swift */; };
 		F21DAB1A2C3042430044ACF2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F21DAB172C3042430044ACF2 /* MainMenu.xib */; };
-		F21DAB1F2C30449A0044ACF2 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21DAB1D2C3044870044ACF2 /* Sparkle.framework */; };
-		F21DAB202C30449A0044ACF2 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F21DAB1D2C3044870044ACF2 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F21DAB242C3044A20044ACF2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21DAB232C3044A20044ACF2 /* IOKit.framework */; };
 		F21DAB2C2C30483A0044ACF2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F21DAB272C30483A0044ACF2 /* Localizable.strings */; };
 		F21DAB2D2C30483A0044ACF2 /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = F21DAB292C30483A0044ACF2 /* MainMenu.strings */; };
@@ -98,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F21DAB1F2C30449A0044ACF2 /* Sparkle.framework in Frameworks */,
 				F21DAB242C3044A20044ACF2 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,13 +193,14 @@
 				F21DAAF82C3040F50044ACF2 /* Sources */,
 				F21DAAF92C3040F50044ACF2 /* Frameworks */,
 				F21DAAFA2C3040F50044ACF2 /* Resources */,
-				F21DAB212C30449A0044ACF2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Caffeine;
+			packageProductDependencies = (
+			);
 			productName = Caffeine;
 			productReference = F21DAAFC2C3040F50044ACF2 /* Caffeine.app */;
 			productType = "com.apple.product-type.application";

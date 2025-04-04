@@ -126,28 +126,28 @@ DQ
                                     <menuItem title="Short (testing)" tag="-1" hidden="YES" id="MNW-wS-RS4">
                                         <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </menuItem>
-                                    <menuItem title="1 minute" tag="1" hidden="YES" id="2me-21-BrY">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                    </menuItem>
-                                    <menuItem title="5 minutes" tag="5" id="P2M-rU-Sxe">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                    </menuItem>
-                                    <menuItem title="10 minutes" tag="10" id="u24-a0-IQA">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                    </menuItem>
-                                    <menuItem title="15 minutes" tag="15" id="nqB-IC-4j5">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                    </menuItem>
-                                    <menuItem title="30 minutes" tag="30" id="FOf-Vt-CNm">
-                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                    </menuItem>
                                     <menuItem title="1 hour" tag="60" id="hVt-Kz-aJC">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
                                     <menuItem title="2 hours" tag="120" id="I9v-fY-QqI">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
+                                    <menuItem title="3 hours" tag="180" id="P2M-rU-Sxe">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="4 hours" tag="240" id="u24-a0-IQA">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
                                     <menuItem title="5 hours" tag="300" id="CfK-Nf-en1">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="6 hours" tag="360" id="nqB-IC-4j5">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="7 hours" tag="420" id="FOf-Vt-CNm">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="8 hours" tag="480" id="jN2-qF-pW3">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
                                 </items>

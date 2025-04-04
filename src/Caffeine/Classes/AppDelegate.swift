@@ -7,10 +7,10 @@
 
 import Cocoa
 import IOKit.pwr_mgt
-import Sparkle
+// import Sparkle
 
 @main
-class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, SPUStandardUserDriverDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     
     var isActive:Bool
     var userSessionIsActive:Bool
@@ -28,7 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, SPUStandardU
     @IBOutlet var infoSeparatorItem:NSMenuItem!
     
     var preferencesWindowController:PreferencesWindowController!
-    var updaterController:SPUStandardUpdaterController!
+    // var updaterController:SPUStandardUpdaterController!
     
     override init() {
         self.isActive = false
@@ -60,9 +60,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, SPUStandardU
         UserDefaults.standard.register(defaults: ["CASuppressLaunchMessage" : false])
         
         preferencesWindowController = PreferencesWindowController(windowNibName: "PreferencesWindowController")
-        updaterController = SPUStandardUpdaterController(startingUpdater: true,
-                                                         updaterDelegate: nil,
-                                                         userDriverDelegate: self);
+        // updaterController = SPUStandardUpdaterController(startingUpdater: true,
+        //                                                updaterDelegate: nil,
+        //                                                userDriverDelegate: self);
         
         if !UserDefaults.standard.bool(forKey: "CASuppressLaunchMessage") {
             self.showPreferences(nil)
@@ -146,10 +146,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, SPUStandardU
         preferencesWindowController.showWindow(self)
     }
     
-    @IBAction func checkForUpdates(_ sender:Any?) {
-        updaterController.checkForUpdates(sender)
-    }
-    
     
     // MARK:  Public
     // MARK:  ---
@@ -220,7 +216,25 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, SPUStandardU
             if let timeoutTimer = self.timeoutTimer {
                 let left = Int(timeoutTimer.fireDate.timeIntervalSinceNow)
                 if left >= 3600 {
-                    infoMenuItem.title = String(format: "%02d:%02d", left/3600, (left%3600)/60)
+                    // Calculate total hours and remaining minutes
+                    let totalHours = left / 3600
+                    let remainingMinutes = (left % 3600) / 60
+                    
+                    if totalHours == 1 {
+                        // Special case for 1 hour
+                        if remainingMinutes > 0 {
+                            infoMenuItem.title = String(format: NSLocalizedString("1 hour %d minutes", comment: "e.g. 1 hour 30 minutes"), remainingMinutes)
+                        } else {
+                            infoMenuItem.title = NSLocalizedString("1 hour", comment: "e.g. 1 hour")
+                        }
+                    } else {
+                        // Multiple hours
+                        if remainingMinutes > 0 {
+                            infoMenuItem.title = String(format: NSLocalizedString("%d hours %d minutes", comment: "e.g. 2 hours 30 minutes"), totalHours, remainingMinutes)
+                        } else {
+                            infoMenuItem.title = String(format: NSLocalizedString("%d hours", comment: "e.g. 2 hours"), totalHours)
+                        }
+                    }
                 } else if left > 60 {
                     infoMenuItem.title = String(format: NSLocalizedString("%d minutes", comment: "e.g. 5 minutes"), left/60)
                 } else {
@@ -235,13 +249,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, SPUStandardU
         }
     }
 
-    
-    // MARK: SPUStandardUserDriverDelegate
-    // MARK: ---
-    func supportsGentleScheduledUpdateReminders() -> Bool {
-        return true
-    }
-    
     
     // MARK: NSWorkspace Notifications
     // MARK: ---
